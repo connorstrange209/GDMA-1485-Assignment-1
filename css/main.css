@@ -1,11 +1,46 @@
 @charset "utf-8";
 /* CSS Document */
 
-/* QUESTIONS FOR ELIZABETH
-1: How to get h1 flush bottom
-2: How to make the grn-rule divs live in the same space as #meet-brandi p:last-child
-*/
+/*--------------------------------------------------------------
+>>> CSS STANDARDS
+----------------------------------------------------------------
+1. Place in appropriate section
+2. Add new sections to the Table of Contents as needed
+3. Order properties consistently inside each declaration i.e. alphabetically or by function 
+4. Declaration selectors should each occupy a new line
+5. Enter one new line between rules
+6. Enter more than one new line between categories 
+--------------------------------------------------------------*/
 
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 - Settings: used with preprocessors and contain font, colors definitions, etc.
+2.0 - Tools: globally used mixins and functions. Use for preprocessor only.
+3.0 - Generic: reset and/or normalize styles, box-sizing definition, etc. 
+4.0 - Elements: styling for bare/generic HTML elements 
+        - Forms
+        - Lists
+        - Media
+        - Tables
+        - Typography: Headings, Paragraphs, Blockquotes, Anchors
+5.0 - Objects: class-based selectors which define undecorated design patterns, building blocks
+        - Framework
+6.0 - Components: specific designed components
+        - Buttons
+        - Header
+        - Navigation 
+7.0 - Utilities: utilities and helper classes with ability to override anything which goes before in the triangle, eg. hide helper class
+        - Alignment            
+        - Color
+        - Size
+
+
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+3.0 - GENERIC 
+-------------------------------------------------------------- */
 * {
 	-webkit-box-sizing: border-box;
 	-ms-box-sizing: border-box;
@@ -15,81 +50,22 @@
 	font-family: 'Open Sans', sans-serif;
 }
 
-.wrapper {
-	width: 1170px;
+:focus {
+	outline: none;
 }
 
-.wrapper, .grn-h2, #meet-brandi, #works div div:last-child{
-	margin: 0 auto;
-}
 
-.row {
-	overflow: auto;
-}
-
-#bg-drk-grn {
-	background-color: #10443f;
-}
-
-header > div:last-child {
-	background-color: #104f41;
-}
-
-#features {
-	background-color: #f4f7f9;
-}
-
-#team {
-	background-color: #1ea78d;
-}
-
+/*--------------------------------------------------------------
+4.0 - ELEMENTS 
+-------------------------------------------------------------- */
+/* -- BLOCK ELEMENTS -- */
 nav {
-	float: right;
 	width: 350px;
 	text-align: right;
 }
 
 li {
 	display: inline-block;
-}
-
-header, #team, #meet-brandi {
-	color: white;
-}
-
-a {
-	text-decoration: none;
-	color: white;
-	font-weight: 600;
-}
-
-#h1-div {
-	float: left;
-	width: 250px;
-}
-
-h1 {
-	font-size: 12px;
-	font-weight: 300;
-	color: #587c79;
-}
-
-#h1-div span:first-child {
-	font-size: 20px;
-	color: white;
-}
-
-#h1-div span:first-child, #content-team h2 {
-	font-family: 'Pacifico', cursive;
-	font-weight: 400;
-}
-
-#h1-div span:last-child {
-	margin: 0 20px;
-	color: #19606d;
-}
-
-li {
 	margin-left: 20px;
 	font-size: 12px;
 }
@@ -98,39 +74,192 @@ ul {
 	padding: 0;
 }
 
-#meet-brandi {
-	padding: 300px 0 180px;
-	text-align: center;
-	font-weight: 300;
-}
-
-#meet-brandi p:first-child {
-	font-size: 55px;
-	margin: 0 0 30px;
-}
-
-#meet-brandi p:last-child {
-	font-size: 10px;
-	display: inline-block;
-	width: 315px;
-}
-
-#meet-brandi span:first-child {
+/* -- INLINE ELEMENTS -- */
+bold {
 	font-weight: 600;
 }
 
-#meet-brandi span:last-child {
-	color: #0fdf97;
+/* -- TYPOGRAPHY -- */
+a {
+	text-decoration: none;
+	font-weight: 600;
 }
 
-.grn-rule {
-	display: inline-block;
-	width: 15px;
-	height: 2px;
-	background-color: #0fdf97;
+h1 {
+	font-size: 12px;
+	font-weight: 300;
+	color: #587c79;
+}
+
+h3 {
+	font-weight: 600;
+	color: #062033;
+	font-size: 15px;
 }
 
 
+/*--------------------------------------------------------------
+5.0 - OBJECTS
+-------------------------------------------------------------- */
+/* -- FRAMEWORK -- */
+.wrapper {
+	width: 1170px;
+}
+
+.row {
+	overflow: auto;
+}
 
 
+/*--------------------------------------------------------------
+6.0 - COMPONENTS 
+-------------------------------------------------------------- */
+/* -- MULTIPLE SECTIONS -- */
+.wrapper, #meet-brandi, #features > .wrapper > header, #works header, #works div div, #meet-brandi > div {
+	margin: 0 auto;
+}
 
+header, #team, #meet-brandi, a, #bg-drk-grn .row span:first-child {
+	color: #fff;
+}
+
+#bg-drk-grn .row div, #meet-brandi > div > div, .col-1-3 {
+	float: left;
+}
+
+nav, #meet-brandi > div > div:last-child, .col-1-3:last-child {
+	float: right;
+}
+
+#meet-brandi div p, #features h2, #works h2, #works p {
+	text-align: center;
+}
+
+#features h2, #works h2 {
+	color: #0eb493;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+}
+
+#features > .wrapper > header, #works header {
+	border-bottom: solid #dce1e5 1.5px;
+	width: 200px;
+}
+
+#features > .wrapper > header, #works header, #team header {
+	padding: 50px 0 5px;
+}
+
+#team p, .col-1-3 p {
+	font-weight: 400;
+	font-size: 10.5px;
+	line-height: 18px;
+}
+
+/* -- HEADER -- */
+#bg-drk-grn {
+	background-color: #10443f;
+}
+
+#bg-drk-grn .row div {
+	width: 250px;
+	margin-top: 5px;
+}
+
+#bg-drk-grn .row span:first-child {
+	font-size: 20px;
+}
+
+#bg-drk-grn .row span:first-child, #team h2 {
+	font-family: 'Pacifico', cursive;
+	font-weight: 400;
+}
+
+#bg-drk-grn .row span:last-child {
+	margin: 0 20px;
+	color: #19606d;
+}
+
+	/* -- MEET BRANDI -- */
+	header > div:last-child {
+		background-color: #104f41;
+	}
+
+	#meet-brandi {
+		padding: 300px 0 180px;
+		text-align: center;
+		font-weight: 300;
+	}
+
+	#meet-brandi > p {
+		font-size: 55px;
+		margin: 0 0 30px;
+		margin-block-end: 15px;
+		/*used to override the effect of a default browser style*/
+	}
+
+	#meet-brandi span {
+		color: #0fdf97;
+	}
+
+	.grn-rule {
+		margin: 0 26px 3.5px;
+		height: 2px;
+		width: 25px;
+		background-color: #0fdf97;
+		display: inline-block;
+	}
+
+	#meet-brandi > div {
+		width: 400px;
+	}
+
+/* -- FEATURES -- */
+#features {
+	background-color: #f4f7f9;
+}
+
+#features .row {
+	padding: 40px 0 80px;
+}
+
+.col-1-3 {
+	width: 250px;
+}
+
+.col-1-3:nth-child(2) {
+	margin-left: 210px;
+}
+
+.col-1-3 p {
+	color: #717982;
+}
+
+/* -- WORKS -- */
+#works div div {
+	width: 770px;
+	padding: 20px 0 160px;
+}
+
+#works p {
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 20px;
+}
+
+/* -- TEAM -- */
+#team {
+	background-color: #1ea78d;
+	border-top: solid #000 5px;
+}
+
+#team div div div {
+	width: 220px;
+	padding-bottom: 80px;
+}
+
+#team p {
+	margin-top: 0;
+	color: #fff;
+}
