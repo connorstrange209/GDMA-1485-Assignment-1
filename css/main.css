@@ -195,7 +195,6 @@ nav, #meet-brandi > div > div:last-child, .col-1-3:last-child {
 	#meet-brandi p:first-child {
 		font-size: 55px;
 		margin: 0 0 25px;
-		/*used to override the effect of a default browser style*/
 	}
 
 	#meet-brandi span {
@@ -208,10 +207,6 @@ nav, #meet-brandi > div > div:last-child, .col-1-3:last-child {
 		width: 25px;
 		background-color: #0fdf97;
 		display: inline-block;
-	}
-
-	#meet-brandi > div {
-		width: 400px;
 	}
 
 /* -- FEATURES -- */
